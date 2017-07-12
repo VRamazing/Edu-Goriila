@@ -8,8 +8,7 @@ i=0
 while(i<=10):
 
 	res = requests.get("http://www.thelearningpoint.net/system/app/pages/search?scope=search-site&q=school&offset=" + str(i))
-	print(res.raise_for_status())
-	print('request' + str(i))
+	print('request Offset : ' + str(i))
 	content =res.content #get html content
 	soup = BeautifulSoup(content,'html.parser')
 
@@ -32,8 +31,6 @@ while(i<=10):
 		else:
 			name =dataSoup.find('span',{'id':'sites-page-title','dir':'ltr','tabindex':'-1'}).string.split(":")[0]
 			email = ''
-
-	
 
 		print(name.strip() + ',' + email.strip() )
 		output = name.strip() + "," + email.strip()
