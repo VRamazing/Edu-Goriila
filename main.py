@@ -33,19 +33,7 @@ while(i<=10):
 			name =dataSoup.find('span',{'id':'sites-page-title','dir':'ltr','tabindex':'-1'}).string.split(":")[0]
 			email = ''
 
-		# else:
-		# 	tableSoup = dataSoup.find("table",{"class":"sites-layout-name-one-column sites-layout-hbox"}).find('table')
-		# 	if tableSoup != None :
-		# 		name = tableSoup.contents[2]
-		# 		print(name)
-		# 		if name == 'School Name' :
-		# 			name = tableSoup.contents[2].td.next_sibling.string
-		# 			email = ''
-		# 	else :
-		# 		name =dataSoup.find('span',{'id':'sites-page-title','dir':'ltr','tabindex':'-1','style':'outline:none'}).string.strip().split(":")[0]
-		# 		email = ''
-
-
+	
 
 		print(name.strip() + ',' + email.strip() )
 		output = name.strip() + "," + email.strip()
